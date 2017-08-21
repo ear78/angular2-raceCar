@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
+  selector: 'racing-app',
+  templateUrl: `
+    <header class="container>
+        <h1>{{heading}}</h1>
+    </header>"
+    `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  heading = 'Ultra Racing Schedule';
 }
