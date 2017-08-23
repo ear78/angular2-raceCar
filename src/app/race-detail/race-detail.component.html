@@ -1,4 +1,7 @@
 <p>
   race-detail {{raceId}}!
 </p>
+<div *ngFor="let race of races">
+    {{race.name}}
+</div>
 <p><a [routerLink]="['/races']">Back to previous page...</a></p>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { RaceService } from '../races/race.service';
 
 @Component({
   selector: 'app-race-detail',
@@ -8,12 +9,18 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class RaceDetailComponent implements OnInit {
     private raceId;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private raceService: RaceService) { }
 
   ngOnInit() {
-      this.route.params.forEach(
-          (params: Params) => this.raceId = params['id']
+      this.route.params.subscribe(
+        //   (params: Params) => this.raceId = params['id']
+        (params: Params) => this.raceService.getRace(params['id'])
       )
+
+    //   this.raceService.getRace(this.route.params){
+    //
+    //   }
   }
 
 }
